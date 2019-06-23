@@ -5,6 +5,7 @@ const forecast = require("./utils/forecast")
 const geocode = require("./utils/geocode")
 
 const app = express()
+const port = process.env.PORT || 3000
 
 const publicDirectoryPath = path.join(__dirname,"../public")
 const partialsPath = path.join(__dirname,"/partials")
@@ -44,6 +45,6 @@ app.get("*",(req,res)=>{
     res.send("404 page")
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("server is up and running")
 })
